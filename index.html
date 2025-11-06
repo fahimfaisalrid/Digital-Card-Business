@@ -1,64 +1,149 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Digital Business Card</title>
+    <title>Professional Business Card</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            text-align: center; 
-            padding: 20px; 
-            background: #f0f0f0; 
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .card { 
-            background: Blue; 
-            max-width: 400px; 
-            margin: 0 auto; 
-            padding: 30px; 
-            border-radius: 10px; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
-        h1 { 
-            color: #333; 
-            margin-bottom: 5px; 
+        .business-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        .profession { 
-            color: #666; 
-            font-style: italic; 
-            margin-bottom: 15px;
+        .business-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
         }
-        .bio { 
-            color: #555; 
-            margin: 20px 0; 
-            line-height: 1.5;
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
         }
-        .contact { 
-            margin-top: 25px; 
+        h1 {
+            color: #2d3748;
+            font-size: 28px;
+            margin-bottom: 5px;
+            font-weight: 700;
         }
-        a { 
-            display: block; 
-            margin: 8px 0; 
-            color: #0077b5; 
-            text-decoration: none; 
-            padding: 8px;
+        .profession {
+            color: #667eea;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
-        a:hover {
-            background: #f5f5f5;
-            border-radius: 5px;
+        .bio {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 10px;
+            text-decoration: none;
+            color: #2d3748;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+        .contact-item:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+        }
+        .contact-item i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .social-link:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Fahim Faisal</h1>
-        <p class="profession">Army Officer</p>
-        <p class="bio">32 Fd Regt Arty</p>
-        <div class="contact">
-            <a href="mailto:customer@email.com">📧 Email: fahimfaisalrid@gmail.com</a>
-            <a href="tel:+8801000000000">📞 Phone: +880 1309-735004</a>
-            <a href="https://facebook.com/profile">📘 Fahim Faisal Rid</a>
-            <a href="https://linkedin.com/in/profile">💼 Fahim Faisal Rid</a>
+    <div class="business-card">
+        <div class="profile-img">JD</div>
+        <h1>John Doe</h1>
+        <div class="profession">Senior Graphic Designer</div>
+        <div class="bio">Creating stunning visual experiences with 5+ years of expertise in branding, UI/UX design, and digital marketing solutions.</div>
+        
+        <div class="contact-info">
+            <a href="mailto:john.doe@email.com" class="contact-item">
+                📧 john.doe@email.com
+            </a>
+            <a href="tel:+8801712345678" class="contact-item">
+                📞 +880 1712-345678
+            </a>
+            <a href="https://wa.me/8801712345678" class="contact-item">
+                💬 WhatsApp
+            </a>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://facebook.com/johndoe" class="social-link">FB</a>
+            <a href="https://linkedin.com/in/johndoe" class="social-link">IN</a>
+            <a href="https://instagram.com/johndoe" class="social-link">IG</a>
+            <a href="https://twitter.com/johndoe" class="social-link">TW</a>
         </div>
     </div>
 </body>
