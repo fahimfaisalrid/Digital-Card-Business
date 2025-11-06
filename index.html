@@ -2,25 +2,63 @@
 <html>
 <head>
     <title>Digital Business Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { font-family: Arial; text-align: center; padding: 50px 20px; background: #f4f4f4; }
-        .card { background: white; max-width: 400px; margin: 0 auto; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; margin-bottom: 5px; }
-        .profession { color: #7f8c8d; font-style: italic; }
-        .contact { margin-top: 20px; }
-        a { display: block; margin: 10px 0; color: #3498db; text-decoration: none; }
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 20px; 
+            background: #f0f0f0; 
+            margin: 0;
+        }
+        .card { 
+            background: white; 
+            max-width: 400px; 
+            margin: 0 auto; 
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { 
+            color: #333; 
+            margin-bottom: 5px; 
+        }
+        .profession { 
+            color: #666; 
+            font-style: italic; 
+            margin-bottom: 15px;
+        }
+        .bio { 
+            color: #555; 
+            margin: 20px 0; 
+            line-height: 1.5;
+        }
+        .contact { 
+            margin-top: 25px; 
+        }
+        a { 
+            display: block; 
+            margin: 8px 0; 
+            color: #0077b5; 
+            text-decoration: none; 
+            padding: 8px;
+        }
+        a:hover {
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1 id="name">Customer Name Here</h1>
-        <p class="profession" id="profession">Customer Profession Here</p>
-        <p id="bio">Customer bio information will go in this section.</p>
+        <h1>Customer Name Here</h1>
+        <p class="profession">Customer Profession Here</p>
+        <p class="bio">Customer bio information will go in this section.</p>
         <div class="contact">
-            <a id="email" href="mailto:customer@email.com">Email: customer@email.com</a>
-            <a id="phone" href="tel:+8801000000000">Phone: +880 1000-000000</a>
-            <a id="facebook" href="https://facebook.com/profile">Facebook Profile</a>
-            <a id="linkedin" href="https://linkedin.com/in/profile">LinkedIn Profile</a>
+            <a href="mailto:customer@email.com">📧 Email: customer@email.com</a>
+            <a href="tel:+8801000000000">📞 Phone: +880 1000-000000</a>
+            <a href="https://facebook.com/profile">📘 Facebook Profile</a>
+            <a href="https://linkedin.com/in/profile">💼 LinkedIn Profile</a>
         </div>
     </div>
 </body>
