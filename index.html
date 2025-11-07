@@ -48,14 +48,11 @@
             right: 0;
             bottom: 0;
             background-image: 
-                /* Green patches */
                 radial-gradient(circle at 20% 30%, #556B2F 8%, transparent 8%),
                 radial-gradient(circle at 80% 20%, #556B2F 6%, transparent 6%),
                 radial-gradient(circle at 40% 70%, #556B2F 7%, transparent 7%),
-                /* Brown patches */
                 radial-gradient(circle at 70% 60%, #8B7355 9%, transparent 9%),
                 radial-gradient(circle at 30% 40%, #8B7355 8%, transparent 8%),
-                /* Dark patches */
                 radial-gradient(circle at 60% 30%, #2F4F4F 10%, transparent 10%),
                 radial-gradient(circle at 10% 80%, #2F4F4F 7%, transparent 7%);
             opacity: 0.4;
@@ -84,13 +81,13 @@
             border: 2px solid #DAA520;
             object-fit: cover;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-            background: #2F4F4F;
         }
 
         .artillery-icon {
             margin-top: 8px;
-            font-size: 20px;
+            font-size: 18px;
             color: #DAA520;
+            font-weight: bold;
             text-shadow: 0 0 5px rgba(218, 165, 32, 0.5);
         }
 
@@ -200,8 +197,8 @@
     <div class="army-card">
         <div class="card-content">
             <div class="photo-section">
-                <img src="https://i.ibb.co/JRsq7hmj/IMG-20230119-WA0005.jpg" alt="Captain Fahim Faisal" class="profile-img" onerror="this.style.display='none'">
-                <div class="artillery-icon">🔫</div>
+                <img src="https://i.ibb.co/WvtsRSgJ/IMG-20230119-WA0005.jpg" alt="Captain Fahim Faisal" class="profile-img">
+                <div class="artillery-icon">ARTY</div>
             </div>
             
             <div class="details-section">
@@ -236,19 +233,5 @@
         </div>
         <div class="card-footer">BANGLADESH ARMY • OFFICIAL</div>
     </div>
-
-    <script>
-        // Fallback if image fails to load
-        document.addEventListener('DOMContentLoaded', function() {
-            const img = document.querySelector('.profile-img');
-            img.onerror = function() {
-                this.style.display = 'none';
-                const photoSection = document.querySelector('.photo-section');
-                const fallback = document.createElement('div');
-                fallback.innerHTML = '<div style="width:80px;height:80px;background:#2F4F4F;border:2px solid #DAA520;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#DAA520;font-size:12px;">Photo</div>';
-                photoSection.insertBefore(fallback, document.querySelector('.artillery-icon'));
-            };
-        });
-    </script>
 </body>
 </html>
