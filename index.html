@@ -12,22 +12,35 @@
         
         body { 
             font-family: 'Arial', sans-serif; 
-            background: linear-gradient(135deg, 
-                #2F4F4F 0%, 
-                #556B2F 25%, 
-                #8B7355 50%, 
-                #696969 75%, 
-                #2F4F4F 100%);
+            background: #1a1a1a;
             min-height: 100vh; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             padding: 20px;
+        }
+
+        .army-card { 
+            background: linear-gradient(135deg, 
+                #2F4F4F 0%, 
+                #556B2F 25%, 
+                #8B7355 50%, 
+                #696969 75%);
+            border-radius: 12px; 
+            padding: 25px 20px; 
+            width: 340px;
+            height: 210px;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.5),
+                0 0 0 2px #8B7355,
+                0 0 0 4px #2F4F4F;
             position: relative;
+            border: 1px solid #8B7355;
             overflow: hidden;
         }
-        
-        body::before {
+
+        /* Bangladesh Army Camouflage Pattern */
+        .army-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -35,169 +48,132 @@
             right: 0;
             bottom: 0;
             background-image: 
-                radial-gradient(circle at 20% 30%, rgba(120, 120, 120, 0.1) 2px, transparent 2px),
-                radial-gradient(circle at 80% 70%, rgba(100, 100, 100, 0.1) 2px, transparent 2px),
-                radial-gradient(circle at 40% 80%, rgba(80, 80, 80, 0.1) 2px, transparent 2px);
-            background-size: 50px 50px;
+                /* Green patches */
+                radial-gradient(circle at 20% 30%, #556B2F 8%, transparent 8%),
+                radial-gradient(circle at 80% 20%, #556B2F 6%, transparent 6%),
+                radial-gradient(circle at 40% 70%, #556B2F 7%, transparent 7%),
+                /* Brown patches */
+                radial-gradient(circle at 70% 60%, #8B7355 9%, transparent 9%),
+                radial-gradient(circle at 30% 40%, #8B7355 8%, transparent 8%),
+                /* Dark patches */
+                radial-gradient(circle at 60% 30%, #2F4F4F 10%, transparent 10%),
+                radial-gradient(circle at 10% 80%, #2F4F4F 7%, transparent 7%);
+            opacity: 0.4;
+            z-index: 1;
         }
 
-        .military-card { 
-            background: rgba(47, 79, 79, 0.95);
-            border-radius: 15px; 
-            padding: 40px 30px; 
-            max-width: 450px; 
-            width: 100%; 
-            box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.4),
-                0 0 0 2px #8B7355,
-                0 0 0 4px #556B2F,
-                inset 0 0 20px rgba(0, 0, 0, 0.3);
-            text-align: center; 
+        .card-content {
             position: relative;
-            border: 1px solid #8B7355;
-            backdrop-filter: blur(10px);
-        }
-
-        .military-card::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
-            border: 1px solid rgba(139, 115, 85, 0.3);
-            border-radius: 10px;
-            pointer-events: none;
-        }
-
-        .badge-corner {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #8B0000, #B22222);
-            border-radius: 50%;
+            z-index: 2;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: gold;
-            font-size: 20px;
-            font-weight: bold;
-            border: 2px solid gold;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            height: 100%;
         }
 
-        .profile-container {
-            position: relative;
-            margin-bottom: 25px;
+        .photo-section {
+            flex: 0 0 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 15px;
         }
 
         .profile-img { 
-            width: 140px; 
-            height: 140px; 
-            border-radius: 50%; 
-            margin: 0 auto 15px; 
-            border: 4px solid #8B7355;
+            width: 80px; 
+            height: 80px; 
+            border-radius: 8px; 
+            border: 2px solid #DAA520;
             object-fit: cover;
-            box-shadow: 
-                0 0 20px rgba(0, 0, 0, 0.5),
-                inset 0 0 20px rgba(0, 0, 0, 0.3);
-            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            background: #2F4F4F;
         }
 
-        .rank-stripe {
-            background: linear-gradient(90deg, #8B0000, #B22222, #8B0000);
-            height: 8px;
-            width: 100px;
-            margin: 0 auto 15px;
-            border-radius: 4px;
-            position: relative;
+        .artillery-icon {
+            margin-top: 8px;
+            font-size: 20px;
+            color: #DAA520;
+            text-shadow: 0 0 5px rgba(218, 165, 32, 0.5);
         }
 
-        .rank-stripe::before, .rank-stripe::after {
-            content: '⚔️';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 12px;
+        .details-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
-        .rank-stripe::before { left: -20px; }
-        .rank-stripe::after { right: -20px; }
+        .name-rank {
+            border-bottom: 2px solid #DAA520;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+        }
 
         h1 { 
             color: #F5F5DC; 
-            font-size: 28px; 
-            margin-bottom: 5px; 
+            font-size: 16px; 
+            margin-bottom: 2px; 
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            letter-spacing: 0.5px;
         }
 
         .profession { 
             color: #DAA520; 
-            font-size: 18px; 
-            margin-bottom: 8px; 
+            font-size: 11px; 
+            margin-bottom: 3px; 
             font-weight: 600;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         .unit { 
             color: #98FB98; 
-            font-size: 14px; 
-            margin-bottom: 20px; 
-            font-style: italic;
-        }
-
-        .motto {
-            color: #F5F5DC;
-            font-size: 12px;
-            margin-bottom: 25px;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            border-left: 3px solid #8B0000;
-            font-style: italic;
+            font-size: 10px; 
+            font-weight: 500;
         }
 
         .contact-info { 
+            flex: 1;
             display: flex; 
             flex-direction: column; 
-            gap: 12px; 
-            margin-bottom: 25px; 
+            gap: 6px; 
+            margin-bottom: 8px;
         }
 
         .contact-item { 
-            padding: 12px 15px; 
-            background: rgba(85, 107, 47, 0.3); 
-            border-radius: 8px; 
+            padding: 4px 8px; 
+            background: rgba(47, 79, 79, 0.8); 
+            border-radius: 4px; 
             text-decoration: none; 
             color: #F5F5DC; 
             border: 1px solid #8B7355;
-            transition: all 0.3s ease;
-            font-size: 14px;
+            font-size: 9px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
+            gap: 4px;
         }
 
-        .contact-item:hover { 
-            background: rgba(139, 115, 85, 0.4); 
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        .social-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .facebook-link {
+            color: #F5F5DC;
+            font-size: 9px;
+            text-decoration: none;
+            background: rgba(47, 79, 79, 0.8);
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid #8B7355;
         }
 
         .social-links { 
             display: flex; 
-            justify-content: center; 
-            gap: 15px; 
+            gap: 8px; 
         }
 
         .social-link { 
-            width: 45px; 
-            height: 45px; 
+            width: 25px; 
+            height: 25px; 
             border-radius: 50%; 
             background: linear-gradient(135deg, #556B2F, #8B7355); 
             display: flex; 
@@ -205,69 +181,74 @@
             justify-content: center; 
             color: #F5F5DC; 
             text-decoration: none; 
-            transition: all 0.3s ease;
             border: 1px solid #8B7355;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .social-link:hover { 
-            transform: scale(1.1); 
-            box-shadow: 0 0 20px rgba(218, 165, 32, 0.5);
-            background: linear-gradient(135deg, #8B7355, #DAA520);
-        }
-
-        .seal {
-            margin-top: 20px;
-            padding: 8px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            border: 1px solid #8B7355;
-        }
-
-        .seal-text {
-            color: #DAA520;
             font-size: 10px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .card-footer {
+            position: absolute;
+            bottom: 8px;
+            right: 15px;
+            color: #DAA520;
+            font-size: 8px;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
-    <div class="military-card">
-        <div class="badge-corner">BD</div>
-        
-        <div class="profile-container">
-            <img src="https://i.ibb.co/JRsq7hmj/IMG-20230119-WA0005.jpg" alt="Captain Fahim Faisal" class="profile-img">
-            <div class="rank-stripe"></div>
+    <div class="army-card">
+        <div class="card-content">
+            <div class="photo-section">
+                <img src="https://i.ibb.co/JRsq7hmj/IMG-20230119-WA0005.jpg" alt="Captain Fahim Faisal" class="profile-img" onerror="this.style.display='none'">
+                <div class="artillery-icon">🔫</div>
+            </div>
+            
+            <div class="details-section">
+                <div class="name-rank">
+                    <h1>CAPT FAHIM FAISAL</h1>
+                    <div class="profession">BANGLADESH ARMY</div>
+                    <div class="unit">32 FIELD REGIMENT ARTILLERY</div>
+                </div>
+                
+                <div class="contact-info">
+                    <a href="tel:01309735004" class="contact-item">
+                        📞 01309-735004
+                    </a>
+                    <a href="mailto:fahimfaisalrid@gmail.com" class="contact-item">
+                        📧 fahimfaisalrid@gmail.com
+                    </a>
+                    <a href="https://linkedin.com/in/FahimFaisalRid" class="contact-item">
+                        💼 LinkedIn: Fahim Faisal Rid
+                    </a>
+                </div>
+                
+                <div class="social-section">
+                    <a href="https://facebook.com/FahimFaisalRid" class="facebook-link">
+                        Facebook: Fahim Faisal Rid
+                    </a>
+                    <div class="social-links">
+                        <a href="https://facebook.com/FahimFaisalRid" class="social-link">f</a>
+                        <a href="https://linkedin.com/in/FahimFaisalRid" class="social-link">in</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <h1>CAPTAIN FAHIM FAISAL</h1>
-        <div class="profession">Bangladesh Army Officer</div>
-        <div class="unit">Serving with Pride & Honor</div>
-        
-        <div class="motto">
-            "Duty, Honor, Country - Always Faithful, Always Ready"
-        </div>
-        
-        <div class="contact-info">
-            <a href="tel:01309735004" class="contact-item">
-                📞 01309-735004
-            </a>
-            <a href="mailto:fahimfaisalrid@gmail.com" class="contact-item">
-                📧 fahimfaisalrid@gmail.com
-            </a>
-        </div>
-        
-        <div class="social-links">
-            <a href="https://linkedin.com/in/FahimFaisalRid" class="social-link">in</a>
-            <a href="#" class="social-link">⚔️</a>
-            <a href="#" class="social-link">🛡️</a>
-        </div>
-
-        <div class="seal">
-            <div class="seal-text">Bangladesh Army • Professional Card</div>
-        </div>
+        <div class="card-footer">BANGLADESH ARMY • OFFICIAL</div>
     </div>
+
+    <script>
+        // Fallback if image fails to load
+        document.addEventListener('DOMContentLoaded', function() {
+            const img = document.querySelector('.profile-img');
+            img.onerror = function() {
+                this.style.display = 'none';
+                const photoSection = document.querySelector('.photo-section');
+                const fallback = document.createElement('div');
+                fallback.innerHTML = '<div style="width:80px;height:80px;background:#2F4F4F;border:2px solid #DAA520;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#DAA520;font-size:12px;">Photo</div>';
+                photoSection.insertBefore(fallback, document.querySelector('.artillery-icon'));
+            };
+        });
+    </script>
 </body>
 </html>
