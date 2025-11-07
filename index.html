@@ -12,7 +12,7 @@
         
         body { 
             font-family: 'Arial', sans-serif; 
-            background: #1a1a1a;
+            background: #0a1f0a;
             min-height: 100vh; 
             display: flex; 
             align-items: center; 
@@ -21,53 +21,44 @@
         }
 
         .army-card { 
-            background: linear-gradient(135deg, 
-                #2F4F4F 0%, 
-                #556B2F 25%, 
-                #8B7355 50%, 
-                #696969 75%);
-            border-radius: 12px; 
-            padding: 25px 20px; 
-            width: 340px;
-            height: 210px;
-            box-shadow: 
-                0 15px 35px rgba(0, 0, 0, 0.5),
-                0 0 0 2px #8B7355,
-                0 0 0 4px #2F4F4F;
+            background: 
+                /* Camouflage background */
+                url('https://i.ibb.co/276e-Or-Swuv-OHN1bk7/camouflage.jpg'),
+                linear-gradient(135deg, #2F4F4F, #556B2F);
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px; 
+            padding: 0;
+            width: 360px;
+            height: 230px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
             position: relative;
-            border: 1px solid #8B7355;
             overflow: hidden;
+            border: 3px solid #8B7355;
         }
 
-        /* Bangladesh Army Camouflage Pattern */
-        .army-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 30%, #556B2F 8%, transparent 8%),
-                radial-gradient(circle at 80% 20%, #556B2F 6%, transparent 6%),
-                radial-gradient(circle at 40% 70%, #556B2F 7%, transparent 7%),
-                radial-gradient(circle at 70% 60%, #8B7355 9%, transparent 9%),
-                radial-gradient(circle at 30% 40%, #8B7355 8%, transparent 8%),
-                radial-gradient(circle at 60% 30%, #2F4F4F 10%, transparent 10%),
-                radial-gradient(circle at 10% 80%, #2F4F4F 7%, transparent 7%);
-            opacity: 0.4;
-            z-index: 1;
+        .official-header {
+            background: linear-gradient(90deg, #006A4E, #006A4E, #006A4E);
+            color: #FFFFFF;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            border-bottom: 3px solid #DAA520;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            font-family: 'Arial Black', sans-serif;
         }
 
         .card-content {
-            position: relative;
-            z-index: 2;
+            padding: 15px 20px;
             display: flex;
-            height: 100%;
+            height: calc(100% - 45px);
+            background: rgba(0, 0, 0, 0.7);
         }
 
         .photo-section {
-            flex: 0 0 90px;
+            flex: 0 0 110px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -75,20 +66,27 @@
         }
 
         .profile-img { 
-            width: 80px; 
-            height: 80px; 
-            border-radius: 8px; 
-            border: 2px solid #DAA520;
+            width: 100px; 
+            height: 100px; 
+            border-radius: 10px; 
             object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9);
+            border: 3px solid #DAA520;
         }
 
-        .artillery-icon {
-            margin-top: 8px;
-            font-size: 18px;
-            color: #DAA520;
-            font-weight: bold;
-            text-shadow: 0 0 5px rgba(218, 165, 32, 0.5);
+        .artillery-gun {
+            width: 100px;
+            height: 50px;
+            background: 
+                /* Artillery gun image */
+                url('https://i.ibb.co/vvxy-DTv-HFQ17-Idgve/artillery-gun.jpg'),
+                rgba(47, 79, 79, 0.9);
+            background-size: cover;
+            background-position: center;
+            margin-top: 10px;
+            border-radius: 6px;
+            border: 2px solid #8B7355;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
         }
 
         .details-section {
@@ -98,31 +96,34 @@
         }
 
         .name-rank {
-            border-bottom: 2px solid #DAA520;
+            margin-bottom: 12px;
             padding-bottom: 8px;
-            margin-bottom: 8px;
+            border-bottom: 2px solid #DAA520;
         }
 
         h1 { 
-            color: #F5F5DC; 
-            font-size: 16px; 
-            margin-bottom: 2px; 
+            color: #FFFFFF; 
+            font-size: 18px; 
+            margin-bottom: 4px; 
             font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+            letter-spacing: 1.5px;
+            font-family: 'Arial Black', sans-serif;
         }
 
         .profession { 
             color: #DAA520; 
-            font-size: 11px; 
+            font-size: 13px; 
             margin-bottom: 3px; 
             font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
         }
 
         .unit { 
             color: #98FB98; 
-            font-size: 10px; 
-            font-weight: 500;
+            font-size: 11px; 
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
         }
 
         .contact-info { 
@@ -130,37 +131,34 @@
             display: flex; 
             flex-direction: column; 
             gap: 6px; 
-            margin-bottom: 8px;
         }
 
         .contact-item { 
-            padding: 4px 8px; 
-            background: rgba(47, 79, 79, 0.8); 
-            border-radius: 4px; 
+            padding: 6px 10px; 
+            background: rgba(47, 79, 79, 0.85); 
+            border-radius: 5px; 
             text-decoration: none; 
-            color: #F5F5DC; 
+            color: #FFFFFF; 
             border: 1px solid #8B7355;
-            font-size: 9px;
+            font-size: 10px;
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .contact-item:hover {
+            background: rgba(85, 107, 47, 0.9);
+            transform: translateX(5px);
+            border-color: #DAA520;
         }
 
         .social-section {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: auto;
-        }
-
-        .facebook-link {
-            color: #F5F5DC;
-            font-size: 9px;
-            text-decoration: none;
-            background: rgba(47, 79, 79, 0.8);
-            padding: 4px 8px;
-            border-radius: 4px;
-            border: 1px solid #8B7355;
+            margin-top: 10px;
         }
 
         .social-links { 
@@ -169,42 +167,65 @@
         }
 
         .social-link { 
-            width: 25px; 
-            height: 25px; 
-            border-radius: 50%; 
+            width: 28px; 
+            height: 28px; 
+            border-radius: 5px; 
             background: linear-gradient(135deg, #556B2F, #8B7355); 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            color: #F5F5DC; 
+            color: #FFFFFF; 
             text-decoration: none; 
             border: 1px solid #8B7355;
-            font-size: 10px;
+            font-size: 11px;
             font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #8B7355, #DAA520);
+            box-shadow: 0 0 15px rgba(218, 165, 32, 0.5);
         }
 
         .card-footer {
             position: absolute;
-            bottom: 8px;
-            right: 15px;
+            bottom: 10px;
+            right: 20px;
             color: #DAA520;
-            font-size: 8px;
-            letter-spacing: 0.5px;
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            font-weight: bold;
+        }
+
+        .artillery-badge {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            color: #98FB98;
+            font-size: 9px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
         }
     </style>
 </head>
 <body>
     <div class="army-card">
+        <div class="official-header">
+            BANGLADESH ARMY OFFICIAL
+        </div>
+        
         <div class="card-content">
             <div class="photo-section">
                 <img src="https://i.ibb.co/WvtsRSgJ/IMG-20230119-WA0005.jpg" alt="Captain Fahim Faisal" class="profile-img">
-                <div class="artillery-icon">ARTY</div>
+                <div class="artillery-gun" title="Advanced Towed Artillery Gun System"></div>
             </div>
             
             <div class="details-section">
                 <div class="name-rank">
-                    <h1>CAPT FAHIM FAISAL</h1>
-                    <div class="profession">BANGLADESH ARMY</div>
+                    <h1>CAPTAIN FAHIM FAISAL</h1>
+                    <div class="profession">BANGLADESH ARMY OFFICER</div>
                     <div class="unit">32 FIELD REGIMENT ARTILLERY</div>
                 </div>
                 
@@ -218,20 +239,23 @@
                     <a href="https://linkedin.com/in/FahimFaisalRid" class="contact-item">
                         💼 LinkedIn: Fahim Faisal Rid
                     </a>
+                    <a href="https://facebook.com/FahimFaisalRid" class="contact-item">
+                        📘 Facebook: Fahim Faisal Rid
+                    </a>
                 </div>
                 
                 <div class="social-section">
-                    <a href="https://facebook.com/FahimFaisalRid" class="facebook-link">
-                        Facebook: Fahim Faisal Rid
-                    </a>
                     <div class="social-links">
-                        <a href="https://facebook.com/FahimFaisalRid" class="social-link">f</a>
-                        <a href="https://linkedin.com/in/FahimFaisalRid" class="social-link">in</a>
+                        <a href="https://facebook.com/FahimFaisalRid" class="social-link">FB</a>
+                        <a href="https://linkedin.com/in/FahimFaisalRid" class="social-link">IN</a>
+                        <a href="tel:01309735004" class="social-link">📞</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card-footer">BANGLADESH ARMY • OFFICIAL</div>
+        
+        <div class="artillery-badge">ARTILLERY CORPS</div>
+        <div class="card-footer">OFFICIAL CARD</div>
     </div>
 </body>
 </html>
